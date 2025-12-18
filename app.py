@@ -25,7 +25,7 @@ def get_items():
     return conn.read(worksheet="items", ttl=0)
 
 def get_users():
-    return conn.read(worksheet="users", ttl=0)
+    return conn.read(worksheet="users", usecols=[0,1], ttl=0)
 
 # 3. Session State & Login
 if "authenticated" not in st.session_state:
